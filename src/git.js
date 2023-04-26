@@ -123,7 +123,7 @@ export default class Git {
 
 	async getBaseBranch() {
 		this.baseBranch = await execCmd(
-			`git rev-parse --abbrev-ref HEAD`,
+			`git branch --show-current`,
 			this.workingDir
 		)
 	}
