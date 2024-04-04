@@ -5,8 +5,6 @@ import * as core from '@actions/core'
 import * as path from 'path'
 import * as nunjucks from 'nunjucks'
 
-nunjucks.configure({ autoescape: true, trimBlocks: true, lstripBlocks: true })
-
 // From https://github.com/toniov/p-iteration/blob/master/lib/static-methods.js - MIT © Antonio V
 export async function forEach(array, callback) {
 	for (let index = 0; index < array.length; index++) {
