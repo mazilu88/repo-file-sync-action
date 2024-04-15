@@ -122,7 +122,7 @@ export default class Git {
 
 	async getBaseBranch() {
 		this.baseBranch = await execCmd(
-			`git rev-parse --abbrev-ref HEAD`,
+			`git branch --show-current`,
 			this.workingDir
 		)
 	}
@@ -201,7 +201,7 @@ export default class Git {
 
 	async getLastCommitSha() {
 		this.lastCommitSha = await execCmd(
-			`git rev-parse HEAD`,
+			`git log -1 --format='%H'`,
 			this.workingDir
 		)
 	}
